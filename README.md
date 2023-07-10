@@ -42,9 +42,5 @@ The website can be deployed using various methods, such as:
 
 Choose the deployment method that suits your requirements.
 
-## Credits
-
-- HTML5UP - For providing the [HTML5UP](https://html5up.net) template.
-
 
 Feel free to modify and add more information to the `README.md` file based on your specific project details.
