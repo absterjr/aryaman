@@ -42,5 +42,3 @@ The website can be deployed using various methods, such as:
 
 Choose the deployment method that suits your requirements.
 
-
-Feel free to modify and add more information to the `README.md` file based on your specific project details.
