@@ -142,49 +142,43 @@ button {
 }
 
 /* Skills */
-.skillList {
-  display: grid;
-  gap: 1rem;
-}
-@media screen and (min-width: 737px) {
-  .skillList {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+.skillMatrix {
+  border-top: solid 1px rgba(255, 255, 255, 0.09);
 }
 
-.skillItem {
-  padding: 1.1rem 1.25rem;
-  border: solid 1px rgba(255, 255, 255, 0.175);
-  border-radius: 4px;
+.skillRow {
+  display: grid;
+  grid-template-columns: 9.5rem minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: baseline;
+  padding: 1.05rem 0;
+  border-bottom: solid 1px rgba(255, 255, 255, 0.09);
 }
-.skillItem h3 {
-  font-size: 0.85rem;
-  letter-spacing: 0.08rem;
-  line-height: 1.4;
-  margin-bottom: 0.65rem;
+.skillRow:last-child {
+  border-bottom: 0;
 }
-.skillItem h3 i {
-  margin-right: 0.5rem;
-  opacity: 0.8;
-}
-.skillItem .skillTags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem;
+.skillRow h3 {
   margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.skillItem .skillTags li {
-  padding: 0.15rem 0.55rem;
-  border: solid 1px rgba(255, 255, 255, 0.175);
-  border-radius: 999px;
-  font-size: 0.75rem;
-  line-height: 1.6;
+  font-size: 0.72rem;
+  letter-spacing: 0.08rem;
+  line-height: 1.65;
   white-space: nowrap;
   opacity: 0.85;
 }
+.skillRow p {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.86);
+}
 
+@media screen and (max-width: 736px) {
+  .skillRow {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+    padding: 0.9rem 0;
+  }
+}
 /* Education */
 .educationItem {
   padding: 1.25rem;
