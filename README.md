@@ -1,44 +1,47 @@
+# Aryaman — Personal Website
 
-# My Personal Website
+Personal portfolio for Aryaman: data engineering, analytics products, and independent projects.
 
-This is the repository for my personal website. It showcases my portfolio, skills, experience, and projects.
+**Live:** https://absterjr.github.io/aryaman/
 
-## Technologies Used
+## Stack
 
-- HTML5
-- CSS3
-- JavaScript
-- [Bootstrap](https://getbootstrap.com)
-- [Font Awesome](https://fontawesome.com)
+- HTML5, CSS3, and JavaScript
+- SCSS sources compiled to `assets/css/main.css` (base theme) and `assets/css/custom.css` (site styles)
+- [jQuery](https://jquery.com)
+- [Font Awesome 5](https://fontawesome.com)
+- [HTML5 UP Dimension](https://html5up.net/dimension) template (CC BY 3.0)
 
-## Features
+## Structure
 
-- Responsive design
-- Interactive sections
-- Portfolio showcase
-- Skills and experience display
-- Contact form with email functionality
+- `index.html` — single page with hash-routed sections
+- `assets/css/main.css` — compiled Dimension theme
+- `assets/css/custom.css` — compiled site-specific styles
+- `assets/sass/` — SCSS sources for both stylesheets
+- `assets/js/main.js` — section routing, focus handling, and transitions
+- `images/` — optimized WebP project images and background, the source profile photo, and favicons
+- `Aryaman_Resume.pdf` — downloadable CV
 
-## Getting Started
+## Local development
 
-1. Clone the repository:
+```bash
+python -m http.server 8000
+```
 
-   ```bash
-   git clone https://github.com/absterjr/aryaman.git
-   ```
+Then open http://localhost:8000.
 
-2. Open `index.html` in your web browser.
+To rebuild the custom styles after editing `assets/sass/components/_custom.scss`:
 
-3. Explore the different sections and navigate through the website.
+```bash
+npx sass assets/sass/custom.scss assets/css/custom.css --no-source-map
+```
+
+To rebuild the base theme after editing the other SCSS partials:
+
+```bash
+npx sass assets/sass/main.scss assets/css/main.css --no-source-map
+```
 
 ## Deployment
 
-The website can be deployed using various methods, such as:
-
-- Hosting on a web server
-- Deploying to GitHub Pages
-- Deploying to Netlify
-- Deploying to Vercel
-
-Choose the deployment method that suits your requirements.
-
+Pushes to `main` deploy to GitHub Pages through `.github/workflows/static.yml`.

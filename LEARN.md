@@ -1,50 +1,46 @@
-# My Personal Website - Learn More
+# Learn More
 
-Welcome to the "Learn More" section of my personal website! Here, you can find additional information about the technologies used, key features, and how to get started with the website.
+This site is a single-page portfolio built on the [HTML5 UP Dimension](https://html5up.net/dimension) template. It covers Aryaman's experience, skills, education, and the projects he builds outside work.
 
-## Technologies Used
+## How it is built
 
-This website is built using the following technologies:
+- HTML5, CSS3, and JavaScript
+- SCSS sources in `assets/sass/`, compiled to `assets/css/main.css` and `assets/css/custom.css`
+- [jQuery](https://jquery.com) for section routing and transitions
+- [Font Awesome 5](https://fontawesome.com) for icons
+- Hosted on GitHub Pages
 
-- HTML5: The standard markup language for creating web pages.
-- CSS3: The language for styling web pages and adding visual appeal.
-- JavaScript: The programming language used to add interactivity and functionality to the website.
-- [Bootstrap](https://getbootstrap.com): A popular CSS framework that provides pre-built components and responsive design.
-- [Font Awesome](https://fontawesome.com): A library of icons that enhances the visual aesthetics of the website.
+The site is intentionally static: there is no build server, framework runtime, or database. Sections are opened through URL hashes (`#intro`, `#experience`, and so on), so individual sections can be linked directly.
 
-## Features
+## Accessibility notes
 
-My personal website comes with several exciting features to provide a pleasant user experience:
+- All sections are reachable by keyboard, and focus moves to the opened section heading and back to the navigation on close.
+- The close control is a real button.
+- Icon links have accessible names for screen readers.
+- The contact form uses native validation and a honeypot field for spam filtering.
 
-- Responsive Design: The website adapts seamlessly to different screen sizes, ensuring optimal viewing on various devices, including mobile phones and tablets.
-- Interactive Sections: Various sections of the website are interactive, allowing users to engage and navigate effortlessly through the content.
-- Portfolio Showcase: The website includes a dedicated section to showcase my portfolio, highlighting my projects and accomplishments.
-- Skills and Experience Display: Learn more about my skills, education, and professional experience in the relevant sections of the website.
-- Contact Form with Email Functionality: Easily get in touch with me through the provided contact form, which supports email functionality.
+## Images
 
-## Getting Started
+Project screenshots and the hero background are optimized WebP files. The favicon is generated from the profile photo. The template's unused demo images were removed.
 
-To explore my personal website, follow these simple steps:
+## Running locally
 
-1. Clone the repository:
+```bash
+python -m http.server 8000
+```
 
-   ```bash
-   git clone https://github.com/absterjr/aryaman.git
-   ```
+Open http://localhost:8000.
 
-2. Open the `index.html` file in your preferred web browser.
+## Editing styles
 
-3. Navigate through the different sections to learn more about me, my projects, skills, and experience.
+Site-specific rules live in `assets/sass/components/_custom.scss`. Rebuild with:
+
+```bash
+npx sass assets/sass/custom.scss assets/css/custom.css --no-source-map
+```
+
+Base template rules live in the other SCSS partials and compile to `assets/css/main.css`.
 
 ## Deployment
 
-You can deploy my personal website using various methods, depending on your preferences and hosting options:
-
-- Hosting on a Web Server: Upload the files to a web server of your choice, making the website accessible through a domain.
-- Deploying to GitHub Pages: Utilize GitHub Pages to host the website directly from the repository.
-- Deploying to Netlify: Use Netlify to deploy and manage the website with additional functionalities like form handling.
-- Deploying to Vercel: Deploy the website with Vercel, a platform that offers serverless functions and continuous deployment.
-
-Choose the deployment method that best suits your requirements and share my personal website with others to showcase my work and expertise!
-
-Thank you for visiting my website and getting to know me better. If you have any questions or would like to collaborate, feel free to reach out through the contact form. Happy exploring!
+Every push to `main` triggers the GitHub Pages workflow in `.github/workflows/static.yml`.

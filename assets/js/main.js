@@ -64,6 +64,26 @@
 		var	delay = 325,
 			locked = false;
 
+		// Focus the article heading after it becomes visible.
+			var focusArticle = function($article) {
+
+				var heading = $article.find('h2').first()[0];
+
+				if (heading)
+					heading.focus({ preventScroll: true });
+
+			};
+
+		// Return focus to the nav item that opened the article.
+			var focusNav = function(id) {
+
+				var $link = $nav.find('a[href="#' + id + '"]');
+
+				if ($link.length)
+					$link[0].focus({ preventScroll: true });
+
+			};
+
 		// Methods.
 			$main._show = function(id, initial) {
 
@@ -97,6 +117,9 @@
 
 							// Activate article.
 								$article.addClass('active');
+
+							// Focus article.
+								focusArticle($article);
 
 							// Unlock.
 								locked = false;
@@ -134,6 +157,9 @@
 									setTimeout(function() {
 
 										$article.addClass('active');
+
+										// Focus article.
+											focusArticle($article);
 
 										// Window stuff.
 											$window
@@ -174,6 +200,9 @@
 
 										$article.addClass('active');
 
+										// Focus article.
+											focusArticle($article);
+
 										// Window stuff.
 											$window
 												.scrollTop(0)
@@ -194,7 +223,8 @@
 
 			$main._hide = function(addState) {
 
-				var $article = $main_articles.filter('.active');
+				var $article = $main_articles.filter('.active'),
+					activeId = $article.attr('id');
 
 				// Article not visible? Bail.
 					if (!$body.hasClass('is-article-visible'))
@@ -238,6 +268,9 @@
 									.scrollTop(0)
 									.triggerHandler('resize.flexbox-fix');
 
+							// Focus nav.
+								focusNav(activeId);
+
 							return;
 
 						}
@@ -269,6 +302,9 @@
 										.scrollTop(0)
 										.triggerHandler('resize.flexbox-fix');
 
+								// Focus nav.
+									focusNav(activeId);
+
 								// Unlock.
 									setTimeout(function() {
 										locked = false;
@@ -287,11 +323,14 @@
 				var $this = $(this);
 
 				// Close.
-					$('<div class="close">Close</div>')
-						.appendTo($this)
+					$('<button type="button" class="close" aria-label="Close">Close</button>')
+						.prependTo($this)
 						.on('click', function() {
 							location.hash = '';
 						});
+
+				// Make the article heading focusable for keyboard users.
+					$this.find('h2').first().attr('tabindex', '-1');
 
 				// Prevent clicks from inside article from bubbling.
 					$this.on('click', function(event) {

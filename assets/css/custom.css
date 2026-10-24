@@ -1,0 +1,364 @@
+/* Accessibility */
+.icon > .label {
+  display: block;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: solid 2px rgba(255, 255, 255, 0.65);
+  outline-offset: 3px;
+}
+
+button {
+  font-family: inherit;
+}
+
+#main article h2.major[tabindex="-1"]:focus {
+  outline: none;
+}
+
+/* Close button */
+#main article .close {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Navigation */
+@media screen and (max-width: 820px) {
+  #header nav {
+    width: 100%;
+    max-width: 24rem;
+  }
+  #header nav ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    min-width: 0;
+    max-width: 24rem;
+    overflow: hidden;
+  }
+  #header nav ul li {
+    border-left: 0;
+    border-top: 0;
+  }
+  #header nav ul li:nth-child(n+3) {
+    border-top: solid 1px #ffffff;
+  }
+  #header nav ul li:nth-child(even) {
+    border-left: solid 1px #ffffff;
+  }
+  #header nav ul li a {
+    min-width: 0;
+    width: 100%;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  #header nav ul li a:focus-visible {
+    outline-offset: -3px;
+  }
+  #header nav.use-middle:after {
+    display: none;
+  }
+}
+/* Experience */
+.timelineItem {
+  margin-bottom: 2.5rem;
+}
+.timelineItem:last-child {
+  margin-bottom: 0;
+}
+
+.company {
+  font-size: 1rem;
+  margin-bottom: 0.6rem;
+  padding: 1rem 1.25rem;
+  border: solid 1px rgba(255, 255, 255, 0.175);
+  border-radius: 4px;
+}
+.company i {
+  margin-right: 0.6rem;
+  opacity: 0.8;
+}
+
+.companyMeta {
+  margin-bottom: 1.5rem;
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+.companyMeta i {
+  margin-right: 0.4rem;
+}
+.companyMeta .sep {
+  margin: 0 0.5rem;
+  opacity: 0.5;
+}
+
+.role {
+  margin-bottom: 1.5rem;
+}
+.role:last-child {
+  margin-bottom: 0;
+}
+.role h4 {
+  font-size: 0.85rem;
+  text-transform: none;
+  letter-spacing: 0.03rem;
+  margin-bottom: 0.6rem;
+}
+.role .dates {
+  margin-left: 0.6rem;
+  font-weight: 300;
+  white-space: nowrap;
+  opacity: 0.65;
+}
+.role ul {
+  margin-bottom: 0;
+}
+.role li {
+  margin-bottom: 0.45rem;
+  font-size: 0.95rem;
+}
+.role li:last-child {
+  margin-bottom: 0;
+}
+
+/* Skills */
+.skillList {
+  display: grid;
+  gap: 1rem;
+}
+
+.skillItem {
+  padding: 1.1rem 1.25rem;
+  border: solid 1px rgba(255, 255, 255, 0.175);
+  border-radius: 4px;
+}
+.skillItem h3 {
+  font-size: 0.85rem;
+  margin-bottom: 0.4rem;
+}
+.skillItem h3 i {
+  margin-right: 0.5rem;
+  opacity: 0.8;
+}
+.skillItem p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+/* Education */
+.educationItem {
+  padding: 1.25rem;
+  border: solid 1px rgba(255, 255, 255, 0.175);
+  border-radius: 4px;
+}
+.educationItem h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+.educationItem h3 i {
+  margin-right: 0.5rem;
+  opacity: 0.8;
+}
+.educationItem p {
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+}
+.educationItem p:last-child {
+  margin-bottom: 0;
+}
+.educationItem .meta {
+  font-size: 0.8rem;
+  opacity: 0.75;
+}
+
+/* Projects */
+.projectIntro {
+  margin-bottom: 1.75rem;
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+.projectGrid {
+  display: grid;
+  gap: 1.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.projectCard {
+  overflow: hidden;
+  border: solid 1px rgba(255, 255, 255, 0.175);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.projectShot {
+  display: block;
+  overflow: hidden;
+  margin: 0;
+  border-bottom: solid 1px rgba(255, 255, 255, 0.175);
+}
+.projectShot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  transition: opacity 0.2s ease-in-out;
+}
+.projectShot:hover img {
+  opacity: 0.8;
+}
+.projectShot:hover {
+  border-bottom-color: rgba(255, 255, 255, 0.175);
+}
+.projectShot:focus-visible {
+  outline-offset: -4px;
+}
+
+.projectBody {
+  padding: 1.25rem;
+}
+.projectBody h3 {
+  font-size: 1.1rem;
+  text-transform: none;
+  letter-spacing: 0.02rem;
+  margin-bottom: 0.5rem;
+}
+.projectBody p {
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.projectTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0 0 1.1rem 0;
+  padding: 0;
+  list-style: none;
+}
+.projectTags li {
+  padding: 0.15rem 0.6rem;
+  border: solid 1px rgba(255, 255, 255, 0.175);
+  border-radius: 999px;
+  font-size: 0.65rem;
+  letter-spacing: 0.08rem;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+
+.projectLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.1rem;
+  margin: 0;
+  font-size: 0.7rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+}
+.projectLinks a {
+  border-bottom: 0;
+  opacity: 0.8;
+}
+.projectLinks a:hover {
+  opacity: 1;
+}
+.projectLinks i {
+  margin-right: 0.35rem;
+}
+
+.projectEarlier {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding-top: 1.5rem;
+  border-top: solid 1px rgba(255, 255, 255, 0.09);
+}
+.projectEarlier img {
+  width: 4.5rem;
+  height: 4.5rem;
+  flex: 0 0 auto;
+  border-radius: 4px;
+}
+.projectEarlier h3 {
+  font-size: 0.95rem;
+  text-transform: none;
+  letter-spacing: 0.02rem;
+  margin-bottom: 0.25rem;
+}
+.projectEarlier p {
+  margin-bottom: 0.35rem;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+.projectEarlier .projectLinks {
+  gap: 0.9rem;
+  font-size: 0.65rem;
+}
+.projectEarlier .projectDate {
+  margin-left: 0.35rem;
+  white-space: nowrap;
+  opacity: 0.65;
+}
+
+.projectNote {
+  margin-top: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: solid 1px rgba(255, 255, 255, 0.09);
+  font-size: 0.8rem;
+  line-height: 1.6;
+  opacity: 0.75;
+}
+
+@media screen and (max-width: 736px) {
+  .projectBody {
+    padding: 1rem;
+  }
+  .projectEarlier {
+    gap: 0.8rem;
+    align-items: flex-start;
+  }
+  .projectEarlier img {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+}
+/* Contact */
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.contactIntro {
+  font-size: 0.95rem;
+}
+
+#footer .copyright a {
+  white-space: nowrap;
+}
