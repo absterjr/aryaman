@@ -146,6 +146,11 @@ button {
   display: grid;
   gap: 1rem;
 }
+@media screen and (min-width: 737px) {
+  .skillList {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
 
 .skillItem {
   padding: 1.1rem 1.25rem;
@@ -154,16 +159,29 @@ button {
 }
 .skillItem h3 {
   font-size: 0.85rem;
-  margin-bottom: 0.4rem;
+  letter-spacing: 0.08rem;
+  line-height: 1.4;
+  margin-bottom: 0.65rem;
 }
 .skillItem h3 i {
   margin-right: 0.5rem;
   opacity: 0.8;
 }
-.skillItem p {
+.skillItem .skillTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
   margin: 0;
-  font-size: 0.9rem;
+  padding: 0;
+  list-style: none;
+}
+.skillItem .skillTags li {
+  padding: 0.15rem 0.55rem;
+  border: solid 1px rgba(255, 255, 255, 0.175);
+  border-radius: 999px;
+  font-size: 0.75rem;
   line-height: 1.6;
+  white-space: nowrap;
   opacity: 0.85;
 }
 
